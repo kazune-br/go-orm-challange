@@ -1,5 +1,5 @@
 development:
   dialect: mysql
   dir: db/gorm/migrations
-  datasource: root:password@tcp(localhost)/gormdb?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=true
+  datasource: root:password@tcp(localhost:4401)/gormdb?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=true
   table: migrations

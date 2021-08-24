@@ -20,7 +20,7 @@ func gormsample() {
 		"root",
 		"password",
 		"localhost",
-		"3306",
+		"4401",
 		"gormdb",
 	)
 	db, err := gorm.Open(mysql.Open(dns), &gorm.Config{})
