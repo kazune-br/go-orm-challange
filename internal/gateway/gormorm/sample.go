@@ -17,7 +17,7 @@ func RunGorm() {
 		"password",
 		"localhost",
 		"4401",
-		"gormorm",
+		"gormdb",
 	)
 	db, err := gorm.Open(mysql.Open(dns), &gorm.Config{})
 	if err != nil {
@@ -31,6 +31,7 @@ func RunGorm() {
 		panic(err)
 	}
 	defer conn.Close()
+	fmt.Println("Executing Gorm Example")
 
 	rand.Seed(time.Now().UnixNano())
 	i := uint64(rand.Intn(1000))
