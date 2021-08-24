@@ -21,6 +21,7 @@ new-migration:
 
 migration:
 	sql-migrate up -config=./db/gorm/dbconfig.yml
+	sql-migrate up -config=./db/sqlboiler/dbconfig.yml
 
 gorm:
 	docker-compose $(COMPOSE_OPTS) exec gormdb mysql -uroot -ppassword -Dgormdb

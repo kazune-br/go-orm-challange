@@ -1,0 +1,14 @@
+pkgname="dao"
+output="internal/infrastructure/sqlboiler/dao"
+add-global-variants=true
+add-panic-variants=true
+[mysql]
+  dbname="sqlboilerdb"
+  host="127.0.0.1"
+  port=4402
+  user="root"
+  pass="password"
+  sslmode="false"
+  skipSQLCmd="false"
+  testdbname="isana_activation_test_sql_boiler"
+  blacklist = ["migrations"]

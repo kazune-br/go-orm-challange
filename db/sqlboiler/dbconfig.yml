@@ -1,0 +1,5 @@
+development:
+  dialect: mysql
+  dir: db/sqlboiler/migrations
+  datasource: root:password@tcp(localhost:4402)/sqlboilerdb?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=true
+  table: migrations

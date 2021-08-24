@@ -10,6 +10,18 @@ services:
     ports:
       - 4401:3306
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
-    container_name: gorm-db
+    container_name: gormdb
 #    volumes:
 #      - ../db/gorm/mysql_data:/var/lib/mysql
+
+  sqlboilerdb:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: sqlboilerdb
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: sqlboiler
+      MYSQL_PASSWORD: password
+    ports:
+      - 4402:3306
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    container_name: sqlboilerdb
