@@ -17,14 +17,21 @@ logs:
 	docker-compose $(COMPOSE_OPTS) logs -f
 
 new-migration:
-	sql-migrate new ${FILE} -config=./db/gorm/dbconfig.yml
+	sql-migrate new ${FILE} -config=$$(pwd)/db/gorm/dbconfig.yml
 
 migration:
 	sql-migrate up -config=./db/gorm/dbconfig.yml
 	sql-migrate up -config=./db/sqlboiler/dbconfig.yml
 
-gorm:
+status:
+	sql-migrate status -config=./db/gorm/dbconfig.yml
+	sql-migrate status -config=./db/sqlboiler/dbconfig.yml
+
+gormdb:
 	docker-compose $(COMPOSE_OPTS) exec gormdb mysql -uroot -ppassword -Dgormdb
+
+sqlboilerdb:
+	docker-compose $(COMPOSE_OPTS) exec sqlboilerdb mysql -uroot -ppassword -Dsqlboilerdb
 
 delete-volume:
 	rm -rf ./db/mysql_data
