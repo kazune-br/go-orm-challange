@@ -56,7 +56,6 @@ add-panic-variants=true
   pass="password"
   sslmode="false"
   skipSQLCmd="false"
-  testdbname="isana_activation_test_sql_boiler"
   blacklist = ["migrations"]
 ```
 
