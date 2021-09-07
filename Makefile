@@ -35,3 +35,7 @@ sqlboilerdb:
 
 delete-volume:
 	rm -rf ./db/mysql_data
+
+run:
+	go run ./cmd/main.go ./cmd/wire_gen.go
+

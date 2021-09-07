@@ -39,6 +39,8 @@ sql-migrate up -config=./db/gorm/dbconfig.yml
 # https://zenn.dev/sagae/articles/c6b2e460201d31
 go install github.com/volatiletech/sqlboiler/v4@latest
 go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql@latest
+# go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql@latest
+GO111MODULE=off go get github.com/volatiletech/sqlboiler/drivers/sqlboiler-mysql
 sql-migrate up -config=./db/sqlboiler/dbconfig.yml
 sqlboiler mysql
 ```
